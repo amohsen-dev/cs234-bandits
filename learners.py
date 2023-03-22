@@ -58,7 +58,6 @@ class Learner:
         tss, ps = None, None
         for _ in range(num_iterations):
             try:
-                driver.run()
                 tss, ps = driver.run(tss, ps)
                 _ = self.agent.train(replay_buffer.gather_all())
                 replay_buffer.clear()
